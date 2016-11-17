@@ -1,0 +1,27 @@
+<%= form_tag(regdetails_path, method: "post") do %>
+
+    <%= select_tag "semester", options_for_select(@semesters) %>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Credit</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @courses.each do |c|%>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= c.credit %></td>
+        <td><%= check_box_tag c.name,c.id %></td>
+
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+<%= submit_tag "Submit" %>
+<% end %>
+
+

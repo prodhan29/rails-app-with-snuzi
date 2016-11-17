@@ -1,0 +1,2 @@
+module RegdetailsHelper
+end
